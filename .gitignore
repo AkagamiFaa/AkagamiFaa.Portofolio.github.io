@@ -1,0 +1,23 @@
+# File yang TIDAK ikut di-upload ke GitHub (tetap aman di laptop)
+
+# Video Animasi 2D sudah diputar dari YouTube (dan > 100 MB, pasti ditolak GitHub)
+Animasi 2D/FINAAAAAALLLLL (1).mp4
+
+# Foto & gambar lama yang sudah diganti versi ringan di folder thumbs/
+About me.png
+about_me_dark.png
+Background Projeck Galery.jpeg
+Botol Eco-Sip/Botol.png
+
+# Folder yang tidak dipakai website
+Logo-Logo/
+Project - Project Kecil/
+Jejak Nusantara/
+
+# Cadangan versi lama
+index.backup.html
+
+# File sistem
+Thumbs.db
+desktop.ini
+.DS_Store
