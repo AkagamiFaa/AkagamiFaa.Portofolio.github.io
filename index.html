@@ -2024,6 +2024,7 @@
             php:          { name: 'PHP',               icon: 'icons/php.svg' },
             mysql:        { name: 'MySQL',             icon: 'icons/mysql.svg' },
             renpy:        { name: "Ren'Py",            icon: 'icons/renpy.svg' },
+            figma:        { name: 'Figma',             icon: 'icons/figma.svg' },
             html5:        { name: 'HTML5',             icon: 'icons/html5.svg' },
             tailwind:     { name: 'Tailwind CSS',      icon: 'icons/tailwind.svg' },
             vite:         { name: 'Vite',              icon: 'icons/vite.svg' }
@@ -2155,6 +2156,43 @@
                     { src: 'Video to GIF/Gambar 1.png', cap: 'Proses pengembangan' },
                     { src: 'Video to GIF/Gambar 2.png', cap: 'Setup server lokal' },
                     { src: 'Video to GIF/Gambar 3.png', cap: 'Pengaturan parameter GIF', size: 'pano' }
+                ]
+            },
+            {
+                id: 'surabayasprint',
+                title: 'Surabaya Sprint',
+                category: 'UI/UX Design · Website',
+                thumb: 'thumbs/card-surabayasprint.jpg',
+                cover: 'Surabaya Sprint/web/Home.jpg',
+                tagline: 'Desain UI/UX website komunitas lari Surabaya — dari jadwal event, rute lari, hingga pelacak performa dan katalog perlengkapan.',
+                period: 'Semester 4 · Apr 2026', role: 'UI Designer', course: 'Desain UI/UX (Tugas UTS)',
+                link: 'https://www.figma.com/proto/zhme0VAkSKqIpYvsSeKbbm/My-Web-Runner-Surabaya?node-id=50-473&p=f&scaling=scale-down&content-scaling=fixed&starting-point-node-id=50%3A473&page-id=0%3A1',
+                linkLabel: 'Coba Prototype', linkIcon: 'fas fa-play',
+                link2: 'https://www.figma.com/design/zhme0VAkSKqIpYvsSeKbbm/My-Web-Runner-Surabaya?node-id=0-1',
+                link2Label: 'Lihat File Desain', link2Icon: 'fab fa-figma',
+                liveTag: 'Prototype Figma', liveIcon: 'fab fa-figma',
+                summary: 'Surabaya Sprint adalah konsep website untuk pelari di Kota Surabaya, dengan tagline "Your Run, Your Story, Surabaya!", yang dikerjakan sebagai Tugas UTS mata kuliah Desain UI/UX. Tema proyek ditentukan bersama kelompok, sedangkan seluruh desain antarmuka dan prototype interaktif di Figma saya kerjakan secara mandiri. Website ini mengumpulkan kebutuhan pelari dalam satu tempat: mendaftar event lari, memilih rute di sekitar kota, memantau performa, hingga mencari perlengkapan lari.',
+                highlights: [
+                    'Peran saya: mendesain seluruh antarmuka dan prototype interaktif secara mandiri',
+                    'Event: daftar lomba dengan filter Full Marathon, Half Marathon, dan 5K Fun Run',
+                    'Track: rute lari berdasarkan area (Lintasan, Track, Trotoar) lengkap dengan peta',
+                    'Performance: grafik pace, catatan kecepatan, dan activity log pelari',
+                    'Kit: katalog perlengkapan lari — sepatu, jersey, topi, dan kaus kaki'
+                ],
+                tools: ['figma'],
+                gallery: [
+                    { src: 'Surabaya Sprint/web/Home.jpg', cap: 'Home — hero & tagline', size: 'big' },
+                    { src: 'Surabaya Sprint/web/Daftar Event.jpg', cap: 'Event — daftar lomba lari', size: 'wide' },
+                    { src: 'Surabaya Sprint/web/Pusat Informasi.jpg', cap: 'Pusat informasi' },
+                    { src: 'Surabaya Sprint/web/Pilih Area Lari.jpg', cap: 'Track — pilih area lari' },
+                    { src: 'Surabaya Sprint/web/Grafik Pace.jpg', cap: 'Performance — grafik pace', size: 'big' },
+                    { src: 'Surabaya Sprint/web/Rute Lintasan.jpg', cap: 'Track — rute & peta', size: 'wide' },
+                    { src: 'Surabaya Sprint/web/Activity Log.jpg', cap: 'Performance — activity log' },
+                    { src: 'Surabaya Sprint/web/Paket Perlombaan.jpg', cap: 'Event — paket perlombaan' },
+                    { src: 'Surabaya Sprint/web/Runners Gear.jpg', cap: "Kit — Runner's Gear", size: 'wide' },
+                    { src: 'Surabaya Sprint/web/Katalog Sepatu.jpg', cap: 'Kit — katalog sepatu' },
+                    { src: 'Surabaya Sprint/web/Running Event.jpg', cap: 'Event — hero halaman' },
+                    { src: 'Surabaya Sprint/web/Workspace Figma.jpg', cap: 'Workspace Figma — seluruh frame & komponen', size: 'pano' }
                 ]
             },
             {
@@ -2400,7 +2438,7 @@
                         <img src="${u(p.thumb)}" alt="${p.title}" loading="lazy">
                     </div>
                     <div class="body">
-                        ${p.link ? `<span class="live-tag"><i class="${p.linkIcon ? 'fas fa-gamepad' : 'fas fa-globe'}"></i> ${p.linkIcon ? 'Bisa dimainkan' : 'Live website'}</span>` : ''}
+                        ${p.link ? `<span class="live-tag"><i class="${p.liveIcon || (p.linkIcon ? 'fas fa-gamepad' : 'fas fa-globe')}"></i> ${p.liveTag || (p.linkIcon ? 'Bisa dimainkan' : 'Live website')}</span>` : ''}
                         <h3>${p.title}</h3>
                         <p>${p.tagline}</p>
                         <div class="foot">
@@ -2472,7 +2510,10 @@
                         <div>
                             <h2>Tentang Proyek</h2>
                             <p>${p.summary}</p>
-                            ${p.link ? `<a class="btn btn-gold btn-sm" style="margin-top: 1.4rem;" href="${p.link}" target="_blank" rel="noopener"><i class="${p.linkIcon || 'fas fa-arrow-up-right-from-square'}"></i> ${p.linkLabel || 'Kunjungi Website'}</a>` : ''}
+                            ${p.link ? `<div class="btn-group" style="margin-top: 1.4rem;">
+                                <a class="btn btn-gold btn-sm" href="${p.link}" target="_blank" rel="noopener"><i class="${p.linkIcon || 'fas fa-arrow-up-right-from-square'}"></i> ${p.linkLabel || 'Kunjungi Website'}</a>
+                                ${p.link2 ? `<a class="btn btn-outline btn-sm" href="${p.link2}" target="_blank" rel="noopener"><i class="${p.link2Icon || 'fas fa-arrow-up-right-from-square'}"></i> ${p.link2Label}</a>` : ''}
+                            </div>` : ''}
                         </div>
                         <ul class="highlights">
                             ${p.highlights.map(h => `<li><i class="fas fa-star"></i><span>${h}</span></li>`).join('')}
